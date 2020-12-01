@@ -1,0 +1,14 @@
+{
+  "name": "certs.gpolek.com",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "aws s3 sync ./public s3://certs.gpolek.com --acl public-read --delete",
+    "download": "aws s3 sync s3://certs.gpolek.com ./public --acl public-read --delete",
+    "serve": "serve ./public"
+  },
+  "dependencies": {
+    "serve": "^11.3.2"
+  },
+  "devDependencies": {}
+}
